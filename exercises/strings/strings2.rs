@@ -5,7 +5,6 @@
 // Execute `rustlings hint strings2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 // Fix: changed input type with &String in is_a_color_word fn
 
 fn main() {
