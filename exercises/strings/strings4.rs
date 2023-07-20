@@ -7,7 +7,7 @@
 //
 // No hints this time!
 
-// I AM NOT DONE
+// Fix : distinguised str and string data type
 
 fn string_slice(arg: &str) {
     println!("{}", arg);
@@ -17,14 +17,17 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");
+    string("red".to_string());
+    string(String::from("hi"));
+    string("rust is fun!".to_owned()); // Creates owned data from borrowed data, usually by cloning
+
+    // Calls U::from(self).
+    // That is, this conversion is whatever the implementation of From<T> for U chooses to do.
+    string_slice("nice weather".into());
+    string(format!("Interpolation {}", "Station"));
+    string_slice(&String::from("abc")[0..1]); // slice returns str
+    string_slice("  hello there ".trim()); // trim returns str
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
